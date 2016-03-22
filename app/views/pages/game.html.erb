@@ -1,0 +1,15 @@
+<div class="text-center grid inline">
+<p><%= @grid.each do  |letter| %>
+  <%=letter%>
+<%end%></p>
+
+<form action="/score" class="text-center">
+  <label for="question" class="header text-center"><h2>What's your best guess?</h2></label><br>
+  <input type="hidden" name="start_time" value="<%=Time.now%>">
+  <input type="hidden" name="grid" value="<%=@grid.join%>">
+  <input type="text" id="question" name="guess" placeholder="Longest Guess"><br>
+  <input type="submit" class="btn btn-primary" value="Submit it">
+</form>
+</div>
+
+
